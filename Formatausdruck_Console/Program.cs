@@ -15,7 +15,7 @@ namespace Formatausdruck_Console
             BackgroundColor = Black;
             Clear();
             string dateString = $"Heute: {DateTime.Now.ToLongDateString()}";
-            string zeitString = $"Jetzt: {DateTime.Now.ToShortTimeString()}";    // ToLongtTimeString, zeigt bis zur Sekunde
+            string zeitString = $"Jetzt: {DateTime.Now.ToShortTimeString()}";    // ToLongTimeString, zeigt bis zur Sekunde
             int lengthDateTimeNow = dateString.Length;
             int lengthzeitString = zeitString.Length;
 
