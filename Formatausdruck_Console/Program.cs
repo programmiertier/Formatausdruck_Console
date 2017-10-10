@@ -26,6 +26,18 @@ namespace Formatausdruck_Console
             ForegroundColor = Green;
             SetCursorPosition(maxWidth / 2 - lengthzeitString - 1, ++topLine);
             WriteLine(zeitString);
+
+            SetCursorPosition(2, 10);
+            ForegroundColor = White;
+            WriteLine("Rechnung");
+            SetCursorPosition(2, 11);
+            ForegroundColor = White;
+            WriteLine("Artikel1");
+            SetCursorPosition(2, 12);
+            ForegroundColor = White;
+            WriteLine("Artikel2");
+
+            ReadLine();
         }
     }
 }
