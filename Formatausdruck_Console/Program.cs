@@ -32,7 +32,7 @@ namespace Formatausdruck_Console
             {
                 SetCursorPosition(2, zeile);
                 ForegroundColor = White;
-                WriteLine("Artikel " + ((zeile - 10) + 1));     // Klammersetzung ist wichtig
+                WriteLine($"Artikel {zeile - 9}");     // Klammersetzung ist wichtig
                 
             }
 
