@@ -27,13 +27,18 @@ namespace Formatausdruck_Console
             SetCursorPosition(maxWidth / 2 - lengthzeitString - 1, ++topLine);
             WriteLine(zeitString);
 
+            SetCursorPosition(2, 9);
+            ForegroundColor = White;
+            WriteLine("Bezeichnung\tEinzelpreis\tAnzahl");
 
             for (int zeile = 10; zeile < 16; zeile++)
             {
                 SetCursorPosition(2, zeile);
-                ForegroundColor = (ConsoleColor)(zeile%16);     // modulo hat ein Comeback
-                WriteLine($"Artikel {zeile - 9}");              // Klammersetzung ist wichtig
+                ForegroundColor = (ConsoleColor)(zeile%16);         // modulo hat ein Comeback
+                Write($"Artikel {zeile - 9}\t{(zeile*10.00 +(zeile%4)/100.00).ToString("0.00")}\t\t");  // Klammersetzung ist wichtig
+                //Write erleichtert die Eingabe             //.ToString("0.00") sagt, vor Komma min 1 Stelle, hinter Komma zwei Stellen
                 
+                ReadLine();
             }
 
             ReadLine();
