@@ -28,11 +28,11 @@ namespace Formatausdruck_Console
             WriteLine(zeitString);
 
 
-            for (int zeile = 10; zeile < 13; zeile++)
+            for (int zeile = 10; zeile < 16; zeile++)
             {
                 SetCursorPosition(2, zeile);
-                ForegroundColor = White;
-                WriteLine($"Artikel {zeile - 9}");     // Klammersetzung ist wichtig
+                ForegroundColor = (ConsoleColor)(zeile%16);     // modulo hat ein Comeback
+                WriteLine($"Artikel {zeile - 9}");              // Klammersetzung ist wichtig
                 
             }
 
