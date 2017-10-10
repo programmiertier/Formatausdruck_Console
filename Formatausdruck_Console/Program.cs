@@ -32,9 +32,9 @@ namespace Formatausdruck_Console
 
             SetCursorPosition(2, 9);
             ForegroundColor = White;
-            WriteLine("Bezeichnung\tEinzelpreis\tAnzahl\tPreis");
+            WriteLine("Bezeichnung\tEinzelpreis\tAnzahl\tPreis\tZwischensumme\tGesamtpreis");
 
-            for (int zeile = 10; zeile < 19; zeile++)
+            for (int zeile = 10; zeile < 16; zeile++)
             {
                 
                 SetCursorPosition(2, zeile);
@@ -50,9 +50,11 @@ namespace Formatausdruck_Console
                 Write("{0,8:C}", gesamt);           // gesamt.ToString("0.00") wäre auch gegangen
                                                       // :C ist das lokale Währungszeichen 1.000,00
                 gesamtPreis += gesamt;
-                
+                SetCursorPosition(CursorLeft+3, CursorTop);
+                Write("{0,10:C}", gesamtPreis);
+
             }
-            SetCursorPosition(CursorLeft, CursorTop+2);     // bleibt immer mit dem gleichen Abstand
+            SetCursorPosition(CursorLeft+4, CursorTop+2);     // bleibt immer mit dem gleichen Abstand
             Write("{0,10:C}", gesamtPreis);
             ReadLine();
             
