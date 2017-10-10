@@ -27,15 +27,14 @@ namespace Formatausdruck_Console
             SetCursorPosition(maxWidth / 2 - lengthzeitString - 1, ++topLine);
             WriteLine(zeitString);
 
-            SetCursorPosition(2, 10);
-            ForegroundColor = White;
-            WriteLine("Rechnung");
-            SetCursorPosition(2, 11);
-            ForegroundColor = White;
-            WriteLine("Artikel1");
-            SetCursorPosition(2, 12);
-            ForegroundColor = White;
-            WriteLine("Artikel2");
+
+            for (int zeile = 10; zeile < 13; zeile++)
+            {
+                SetCursorPosition(2, zeile);
+                ForegroundColor = White;
+                WriteLine("Artikel " + ((zeile - 10) + 1));     // Klammersetzung ist wichtig
+                
+            }
 
             ReadLine();
         }
